@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+      "module": "commonjs",
+      "resolveJsonModule": true,
+      "noImplicitAny": true,
+      "noImplicitReturns": true,
+      "noImplicitThis": true,
+      "noUnusedParameters": true,
+      "noUnusedLocals": true,
+      "strictNullChecks": true,
+      "strictFunctionTypes": true,
+      "strictPropertyInitialization": true,
+      "importHelpers": true,
+      "declaration": true,
+      "sourceMap": false,
+      "target": "es5",
+      "lib": ["es6"],
+      "outDir": "../lib"
+  }
+}
+

@@ -1,0 +1,25 @@
+{
+  "name": "svn-commit-lint",
+  "version": "1.0.0",
+  "description": "lint code before svn commit",
+  "main": "src/index.js",
+  "scripts": {
+    "lint": "tslint -c ./tslint.json -p ./src/tsconfig.json",
+    "lint-fix": "tslint -c ./tslint.json -p ./src/tsconfig.json --fix"
+  },
+  "author": "lice",
+  "emal": "lice@nsfocus.com",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^13.7.6",
+    "prettier": "^1.19.1",
+    "tslint": "^6.0.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.1.0",
+    "typescript": "^3.8.2"
+  },
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "commander": "^4.1.1"
+  }
+}
