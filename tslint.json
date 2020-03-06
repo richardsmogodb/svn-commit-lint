@@ -6,10 +6,7 @@
         "tslint-plugin-prettier"
     ],
     "rules": {
-        // Formatting rules
         "prettier": true,
-
-        // Don't want these
         "cyclomatic-complexity": false,
         "increment-decrement": false,
         "newline-before-return": false,
@@ -19,9 +16,6 @@
         "typedef": false,
         "unnecessary-else": false,
         "object-literal-sort-keys": false,
-        "no-console": true,
-
-        // TODO: Enable stricter options for these
         "comment-format": {
             "options": [
                 "check-space"
@@ -34,8 +28,6 @@
                 "allow-named-functions"
             ]
         },
-
-        // TODO: Enable these
         "completed-docs": false,
         "no-any": false,
         "no-magic-numbers": false,
@@ -54,8 +46,6 @@
                 "allow-undefined-check"
             ]
         },
-
-        // Misc
         "ban": {
             "options": [
                 [
@@ -69,22 +59,14 @@
             ]
         },
         "interface-name": false,
-        "file-header": {
-            "options": [
-                "Copyright \\d{4} Palantir Technologies, Inc."
-            ]
-        },
+        "file-header": false,
         "max-classes-per-file": false,
         "member-ordering": {
             "options": {
                 "order": "statics-first"
             }
         },
-        "no-console": {
-            "options": [
-                "log"
-            ]
-        },
+        "no-console": false,
         "no-switch-case-fall-through": true,
         "strict-boolean-expressions": {
             "options": [
