@@ -4,16 +4,13 @@
 
 import commander = require("commander");
 
-import * as pkg from "../package.json";
+import pkg = require("../package.json");
 
 import { run } from "./runner";
 import { dedent } from "./utils";
 
-// import { DEFAULT_LINT_FILE } from "./configuration";
-
 interface Argv {
-  path?: string;
-  script?: string;
+  project?: string;
   config?: string;
   version?: boolean;
   help?: boolean;
@@ -30,30 +27,21 @@ interface Option {
 const options: Option[] = [
   {
     short: "p",
-    name: "path",
+    name: "project",
     type: "string",
-    describe: "提交的本地代码仓库地址",
+    describe: "代码校验的脚本检测文件",
     description: dedent`
-            请在本命令后添加提交的本地代码仓库地址，中间以空格隔开。
-            若不添加，默认为运行脚本的根目录。`
-  },
-  {
-    short: "s",
-    name: "script",
-    type: "string",
-    describe: "代码校验的脚本命令",
-    description: dedent`
-            请在本命令后添加代码校验的脚本命令，中间以空格隔开。
-            若不添加，尝试在运行脚本的根目录运行ts-lint。`
+            请在本命令后添加代码校验的脚本检测文件，中间以空格隔开。
+            若不添加，尝试在运行脚本的根目录查找tsconfig.json。`
   },
   {
     short: "c",
     name: "config",
     type: "string",
-    describe: "代码校验的脚本命令配置文件",
+    describe: "代码校验的脚本配置文件",
     description: dedent`
-            请在本命令后添加代码校验的脚本命令配置文件，中间以空格隔开。
-            若不添加，尝试在运行脚本的根目录查找ts-config.json。`
+            请在本命令后添加代码校验的脚本配置文件，中间以空格隔开。
+            若不添加，尝试在运行脚本的根目录查找tslint.json。`
   }
 ];
 
@@ -118,8 +106,7 @@ const outputStream: NodeJS.WritableStream = process.stdout;
 
 run(
   {
-    path: argv.path,
-    script: argv.script,
+    project: argv.project,
     config: argv.config
   },
   {

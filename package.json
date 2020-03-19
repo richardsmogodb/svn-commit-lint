@@ -1,13 +1,16 @@
 {
-  "name": "svn-commit-lint",
-  "version": "1.0.0",
-  "description": "lint code before svn commit",
-  "main": "src/index.js",
+  "name": "svn-commit-tslint",
+  "version": "1.0.3",
+  "description": "Lint code before svn commit by tslint",
+  "bin": {
+    "svnCommitTslint": "./bin/svn-commit-tslint"
+  },
+  "main": "./lib/index.js",
+  "typings": "./lib/index.d.ts",
   "scripts": {
     "clean": "rimraf lib",
     "build": "tsc -p src",
-    "dev1": "ts-node --files ./src/cli.ts ./typings/typings.d.ts",
-    "dev2": "ts-node --files ./src/cli.ts ./typings/typings.d.ts -p ../../PDC/Tembin",
+    "test": "ts-node -P ./src/tsconfig.json ./src/cli.ts -p ../../PVD-NCSS-V3.0R01F00SP03/Tembin",
     "lint": "tslint -c ./tslint.json -p ./src/tsconfig.json",
     "lint-fix": "tslint -c ./tslint.json -p ./src/tsconfig.json --fix"
   },
@@ -29,5 +32,15 @@
     "chalk": "^3.0.0",
     "commander": "^4.1.1",
     "inquirer": "^7.0.5"
-  }
+  },
+  "engines": {
+    "node": ">=4.8.0"
+  },
+  "keywords": [
+    "cli",
+    "svn",
+    "commit",
+    "typescript",
+    "linter"
+  ]
 }

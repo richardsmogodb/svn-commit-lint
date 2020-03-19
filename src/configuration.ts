@@ -1,1 +1,3 @@
-export const DEFAULT_LINT_FILE = "tslint.json";
+export const COMMAND_NAME = "SvnCommitTslint";
+export const PROJECT_NAME = "tsconfig.json";
+export const CONFIG_NAME = "tslint.json";

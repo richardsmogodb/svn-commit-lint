@@ -1,4 +1,4 @@
 export interface ExecResult {
-    stdout: string;
-    stderr: string;
+  stdout: string;
+  stderr: string;
 }

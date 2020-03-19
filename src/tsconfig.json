@@ -14,11 +14,8 @@
       "sourceMap": false,
       "target": "es5",
       "lib": ["es6"],
-      "outDir": "../lib"
-  },
-  "include": [
-    "*",
-    "../typings"
-  ]
+      "outDir": "../lib",
+      "resolveJsonModule": true
+  }
 }
 
